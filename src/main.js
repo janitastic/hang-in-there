@@ -101,6 +101,16 @@ var quotes = [
 var savedPosters = [];
 var currentPoster;
 
+// Variables targeting relevant DOM elements 👇
+  // looking at iteration 1, which elements on our HTML do we need to maninipulate?
+  var showRandomPoster = document.querySelector(".poster-img");
+  var showRandomTitle = document.querySelector(".poster-title");
+  var showRandomQuote = document.querySelector(".poster-quote");
+  var randomPosterBtn = document.querySelector(".show-random");
+
+
+// GLOBAL VARIABLES
+
 // event listeners go here 👇
 
 // functions and event handlers go here 👇
@@ -108,4 +118,3 @@ var currentPoster;
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
