@@ -107,23 +107,41 @@ var currentPoster;
   var showRandomTitle = document.querySelector(".poster-title");
   var showRandomQuote = document.querySelector(".poster-quote");
   var randomPosterBtn = document.querySelector(".show-random");
-
-
+  var makePosterBtn = document.querySelector(".show-form");
+  var mainPage = document.querySelector(".main-poster");
+  var formPage = document.querySelector(".poster-form")
 
 // GLOBAL VARIABLES
 
 // event listeners go here 👇
 window.addEventListener("load", randomPoster);
 randomPosterBtn.addEventListener("click", randomPoster);
+makePosterBtn.addEventListener("click", posterForm);
+
 // functions and event handlers go here 👇
 
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
+//HELPER FUNCTIONS WE NEED
+function hideMainPage() {
+  mainPage.classList.add("hidden");
+}
+
+function showPosterForm() {
+  formPage.classList.remove("hidden");
+}
+
 function randomPoster() {
-  console.log(images[getRandomIndex(images)]);
+  // console.log(images[getRandomIndex(images)]);
   showRandomPoster.src = images[getRandomIndex(images)];
   showRandomTitle.innerText = titles[getRandomIndex(titles)];
   showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
+}
+
+function posterForm() {
+  hideMainPage();
+  showPosterForm();
 }
