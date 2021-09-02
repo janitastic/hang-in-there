@@ -109,12 +109,21 @@ var currentPoster;
   var randomPosterBtn = document.querySelector(".show-random");
 
 
+
 // GLOBAL VARIABLES
 
 // event listeners go here 👇
-
+window.addEventListener("load", randomPoster);
+randomPosterBtn.addEventListener("click", randomPoster);
 // functions and event handlers go here 👇
+
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+}
+function randomPoster() {
+  console.log(images[getRandomIndex(images)]);
+  showRandomPoster.src = images[getRandomIndex(images)];
+  showRandomTitle.innerText = titles[getRandomIndex(titles)];
+  showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
 }
