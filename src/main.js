@@ -112,6 +112,8 @@ var currentPoster;
   var formPage = document.querySelector(".poster-form");
   var savedPosterBtn = document.querySelector(".show-saved");
   var savedPage = document.querySelector(".saved-posters");
+  var nevermindBtn = document.querySelector(".show-main");
+  var backBtn = document.querySelector(".back-to-main");
 
 // GLOBAL VARIABLES
 
@@ -121,6 +123,8 @@ randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
 makePosterBtn.addEventListener("click", posterForm);
 savedPosterBtn.addEventListener("click", goToSaved);
+nevermindBtn.addEventListener("click", backToMain);
+backBtn.addEventListener("click", backToMain);
 // console.log(savedPosterBtn);
 // functions and event handlers go here 👇
 
@@ -158,4 +162,10 @@ function goToSaved() {
 
 function showSavedPage() {
   savedPage.classList.remove("hidden");
+}
+
+function backToMain() {
+  mainPage.classList.remove("hidden");
+  savedPage.classList.add("hidden");
+  formPage.classList.add("hidden");
 }
