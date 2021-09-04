@@ -190,6 +190,10 @@ function showPoster() {
   event.preventDefault();
   backToMain();
   newPoster();
+  pushUserPoster();
+}
+
+function pushUserPoster() {
   images.push(userImage.value);
   titles.push(userTitle.value);
   quotes.push(userQuote.value);
@@ -203,10 +207,14 @@ function newPoster() {
 }
 
 function savePoster() {
+  // pushUserPoster();
+  images.push(userImage.value);
+  titles.push(userTitle.value);
+  quotes.push(userQuote.value);
+  // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
+  savedPosters.push(currentPoster);
   //click save poster buttons adds to savedPosters array
   //no duplicate saves on click
-  //unhide saved posters page
   goToSaved();
-  //hide main page
   //all posters in savedPosters array are displayed on the saved posters page grid
 }
