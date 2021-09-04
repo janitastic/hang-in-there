@@ -124,6 +124,7 @@ var currentPoster;
   var userQuote = document.querySelector("#poster-quote");
   var mainQuote = document.querySelector(".poster-quote");
   var savePosterBtn = document.querySelector(".save-poster");
+  var savedGrid = document.querySelector(".saved-posters-grid");
   // var posterArticle = document.querySelector(".poster"); //do we need this?
   // var newPoster = newPoster();//not sure if we need this
   // var poster = new Poster();
@@ -212,9 +213,21 @@ function savePoster() {
   titles.push(userTitle.value);
   quotes.push(userQuote.value);
   // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
-  savedPosters.push(currentPoster);
-  //click save poster buttons adds to savedPosters array
-  //no duplicate saves on click
+  if(!savedPosters.includes(currentPoster)){
+   savedPosters.push(currentPoster);
+  }
   goToSaved();
+  displayOnGrid();
   //all posters in savedPosters array are displayed on the saved posters page grid
+}
+
+function displayOnGrid() {
+  savedGrid.innerHTML = `
+    <div class = "mini-poster" id = ${currentPoster.id}>
+    <img class = "mini-poster img" src = ${currentPoster.imageURL}>
+    <h2 class = "mini-poster h2"> ${currentPoster.title} </h2>
+    <h4 class = "mini-poster h4"> ${currentPoster.quote}</h4>
+    </div>
+
+    `;
 }
