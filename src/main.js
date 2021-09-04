@@ -221,19 +221,20 @@ function savePoster() {
   // titles.push(userTitle.value);
   // quotes.push(userQuote.value);
   // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
-  pushToSavedPosters()
+  pushToSavedPosters();
   goToSaved();
   displayOnGrid();
   //all posters in savedPosters array are displayed on the saved posters page grid
 }
 
 function displayOnGrid() {
+  savedGrid.innerHTML = ``;
   for (var i = 0; i < savedPosters.length; i++) {
     savedGrid.innerHTML += `
     <div class = "mini-poster" id = ${savedPosters[i].id}>
       <img src = ${savedPosters[i].imageURL}>
-      <h2> ${savedPosters[i].title} </h2>
-      <h4> ${savedPosters[i].quote}</h4>
+      <h2>${savedPosters[i].title}</h2>
+      <h4>${savedPosters[i].quote}</h4>
     </div>
     `;
   }
