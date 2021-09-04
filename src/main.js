@@ -98,6 +98,8 @@ var quotes = [
   "Each person must live their life as a model for others.",
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
+
+// GLOBAL VARIABLES
 var savedPosters = [];
 var currentPoster;
 
@@ -114,8 +116,19 @@ var currentPoster;
   var savedPage = document.querySelector(".saved-posters");
   var nevermindBtn = document.querySelector(".show-main");
   var backBtn = document.querySelector(".back-to-main");
+  var showPosterBtn = document.querySelector(".make-poster");
+  var userImage = document.querySelector("#poster-image-url");
+  var mainImage = document.querySelector("img");
+  var userTitle = document.querySelector("#poster-title");
+  var mainTitle = document.querySelector(".poster-title");
+  var userQuote = document.querySelector("#poster-quote");
+  var mainQuote = document.querySelector(".poster-quote");
+  // var posterArticle = document.querySelector(".poster"); //do we need this?
+  // var newPoster = newPoster();//not sure if we need this
+  // var poster = new Poster();
 
-// GLOBAL VARIABLES
+
+
 
 // event listeners go here 👇
 // window.addEventListener("load", randomPoster);
@@ -125,6 +138,7 @@ makePosterBtn.addEventListener("click", posterForm);
 savedPosterBtn.addEventListener("click", goToSaved);
 nevermindBtn.addEventListener("click", backToMain);
 backBtn.addEventListener("click", backToMain);
+showPosterBtn.addEventListener("click", showPoster);
 // console.log(savedPosterBtn);
 // functions and event handlers go here 👇
 
@@ -168,4 +182,20 @@ function backToMain() {
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
+}
+
+function showPoster() {
+  event.preventDefault();
+  backToMain();
+  newPoster();
+  images.push(userImage.value);
+  titles.push(userTitle.value);
+  quotes.push(userQuote.value);
+  currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
+}
+
+function newPoster() {
+  mainImage.src = userImage.value;
+  mainTitle.innerText = userTitle.value;
+  mainQuote.innerText = userQuote.value;
 }
