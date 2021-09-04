@@ -114,6 +114,14 @@ var currentPoster;
   var savedPage = document.querySelector(".saved-posters");
   var nevermindBtn = document.querySelector(".show-main");
   var backBtn = document.querySelector(".back-to-main");
+  var showPosterBtn = document.querySelector(".make-poster");
+  var newPoster = new Poster();//not sure if we need this
+  var userImage = document.querySelector("#poster-image-url");
+
+  var userTitle = document.querySelector("#poster-title");
+  var posterTitle = document.querySelector(".poster-title");
+  var userQuote = document.querySelector("#poster-quote");
+
 
 // GLOBAL VARIABLES
 
@@ -125,6 +133,7 @@ makePosterBtn.addEventListener("click", posterForm);
 savedPosterBtn.addEventListener("click", goToSaved);
 nevermindBtn.addEventListener("click", backToMain);
 backBtn.addEventListener("click", backToMain);
+showPosterBtn.addEventListener("click", showPoster);
 // console.log(savedPosterBtn);
 // functions and event handlers go here 👇
 
@@ -168,4 +177,15 @@ function backToMain() {
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
+}
+
+function showPoster() {
+  backToMain();
+  event.preventDefault();
+  // use the 3 input values to add them to the poster class
+  // userImage.innerText =
+  posterTitle.innerText = userTitle.value;
+  // userQuote
+  // push the inputs into our 3 arrays
+  // display the new poster on the main page (using the new instance of poster class)
 }
