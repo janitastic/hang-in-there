@@ -117,10 +117,11 @@ var currentPoster;
   var showPosterBtn = document.querySelector(".make-poster");
   var newPoster = new Poster();//not sure if we need this
   var userImage = document.querySelector("#poster-image-url");
-
+  var mainImage = document.querySelector("img");
   var userTitle = document.querySelector("#poster-title");
-  var posterTitle = document.querySelector(".poster-title");
+  var mainTitle = document.querySelector(".poster-title");
   var userQuote = document.querySelector("#poster-quote");
+  var mainQuote = document.querySelector(".poster-quote");
 
 
 // GLOBAL VARIABLES
@@ -182,10 +183,9 @@ function backToMain() {
 function showPoster() {
   backToMain();
   event.preventDefault();
-  // use the 3 input values to add them to the poster class
-  // userImage.innerText =
-  posterTitle.innerText = userTitle.value;
-  // userQuote
+  mainImage.src = userImage.value;
+  mainTitle.innerText = userTitle.value;
+  mainQuote.innerText = userQuote.value;
   // push the inputs into our 3 arrays
   // display the new poster on the main page (using the new instance of poster class)
 }
