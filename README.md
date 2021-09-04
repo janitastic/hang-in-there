@@ -1,18 +1,37 @@
 # Hang In There
 
-A boilerplate repo. 
+Turn that frown upside down with a motivational poster.
 
-## Set Up
+## Overview
 
-1. One teammate: fork this repository
-2. Clone down your new, forked repo
-3. cd into the repository
-4. Open it in your text editor
-5. Add all project partners and your assigned instructor as collaborators on the repository
+Our app generates random motivation posters. You can even create your own, and save them to view later.
 
-Project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/hang-in-there.html)
+Check out a demo below, or test it out for yourself [here](https://janitastic.github.io/hang-in-there/)!
 
-To view your project:
+![App Demo]()
 
-1. In your terminal, navigate to your project repo
-2. Run the command `open index.html`
+---
+
+## Check out the App for yourself! [Hang in There](https://janitastic.github.io/hang-in-there/)
+
+---
+
+## Contributors
+- Turing School of Software & Design Frontend students
+  - Jani Palomino [@janitastic](https://github.com/janitastic)
+  - Emma Chory [@Echory](https://github.com/echory)
+- Comp provided by Turing Instructors
+
+## Future Feature Addtions
+
+- Delete posters you want to remove
+- Error handling
+- Drag and drop image feature
+- Larger view modal
+- Rearrange poster order
+  
+## Technologies Used
+
+- HTML, CSS, JavaScript.
+
+The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/hang-in-there.html). 
