@@ -185,16 +185,13 @@ function backToMain() {
 }
 
 function showPoster() {
-  backToMain();
   event.preventDefault();
+  backToMain();
   newPoster();
-  // images.push(userImage.value); //not sure we need these trying to push to array
-  // titles.push(userTitle.value);
-  // quotes.push(userQuote.value);
-  // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
-  // savedPosters = currentPoster.push();
-  // push the inputs into our 3 arrays
-  // display the new poster on the main page (using the new instance of poster class)
+  images.push(userImage.value);
+  titles.push(userTitle.value);
+  quotes.push(userQuote.value);
+  currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
 }
 
 function newPoster() {
