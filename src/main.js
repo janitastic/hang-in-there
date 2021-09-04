@@ -123,6 +123,7 @@ var currentPoster;
   var mainTitle = document.querySelector(".poster-title");
   var userQuote = document.querySelector("#poster-quote");
   var mainQuote = document.querySelector(".poster-quote");
+  var savePosterBtn = document.querySelector(".save-poster");
   // var posterArticle = document.querySelector(".poster"); //do we need this?
   // var newPoster = newPoster();//not sure if we need this
   // var poster = new Poster();
@@ -139,6 +140,7 @@ savedPosterBtn.addEventListener("click", goToSaved);
 nevermindBtn.addEventListener("click", backToMain);
 backBtn.addEventListener("click", backToMain);
 showPosterBtn.addEventListener("click", showPoster);
+savePosterBtn.addEventListener("click", savePoster);
 // console.log(savedPosterBtn);
 // functions and event handlers go here 👇
 
@@ -198,4 +200,13 @@ function newPoster() {
   mainImage.src = userImage.value;
   mainTitle.innerText = userTitle.value;
   mainQuote.innerText = userQuote.value;
+}
+
+function savePoster() {
+  //click save poster buttons adds to savedPosters array
+  //no duplicate saves on click
+  //unhide saved posters page
+  goToSaved();
+  //hide main page
+  //all posters in savedPosters array are displayed on the saved posters page grid
 }
