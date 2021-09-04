@@ -157,6 +157,7 @@ function randomPoster() {
   showRandomPoster.src = images[getRandomIndex(images)];
   showRandomTitle.innerText = titles[getRandomIndex(titles)];
   showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
+  currentPoster = new Poster(showRandomPoster.src, showRandomTitle.innerText, showRandomQuote.innerText);
 }
 
 function posterForm() {
@@ -191,14 +192,21 @@ function showPoster() {
   event.preventDefault();
   backToMain();
   newPoster();
-  pushUserPoster();
+  createUserPoster();
+  // pushToSavedPosters();
 }
 
-function pushUserPoster() {
+function createUserPoster() {
   images.push(userImage.value);
   titles.push(userTitle.value);
   quotes.push(userQuote.value);
   currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
+}
+
+function pushToSavedPosters() {
+  if(!savedPosters.includes(currentPoster)){
+   savedPosters.push(currentPoster);
+  }
 }
 
 function newPoster() {
@@ -209,25 +217,24 @@ function newPoster() {
 
 function savePoster() {
   // pushUserPoster();
-  images.push(userImage.value);
-  titles.push(userTitle.value);
-  quotes.push(userQuote.value);
+  // images.push(userImage.value);
+  // titles.push(userTitle.value);
+  // quotes.push(userQuote.value);
   // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
-  if(!savedPosters.includes(currentPoster)){
-   savedPosters.push(currentPoster);
-  }
+  pushToSavedPosters()
   goToSaved();
   displayOnGrid();
   //all posters in savedPosters array are displayed on the saved posters page grid
 }
 
 function displayOnGrid() {
-  savedGrid.innerHTML = `
-    <div class = "mini-poster" id = ${currentPoster.id}>
-    <img class = "mini-poster img" src = ${currentPoster.imageURL}>
-    <h2 class = "mini-poster h2"> ${currentPoster.title} </h2>
-    <h4 class = "mini-poster h4"> ${currentPoster.quote}</h4>
+  for (var i = 0; i < savedPosters.length; i++) {
+    savedGrid.innerHTML += `
+    <div class = "mini-poster" id = ${savedPosters[i].id}>
+      <img src = ${savedPosters[i].imageURL}>
+      <h2> ${savedPosters[i].title} </h2>
+      <h4> ${savedPosters[i].quote}</h4>
     </div>
-
     `;
+  }
 }
