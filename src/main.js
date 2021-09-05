@@ -129,8 +129,8 @@ randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
 makePosterBtn.addEventListener("click", showPosterForm);
 savedPosterBtn.addEventListener("click", showSavedPage);
-nevermindBtn.addEventListener("click", backToMain);
-backBtn.addEventListener("click", backToMain);
+nevermindBtn.addEventListener("click", showMainPage);
+backBtn.addEventListener("click", showMainPage);
 showPosterBtn.addEventListener("click", showPoster);
 savePosterBtn.addEventListener("click", savePoster);
 savedGrid.addEventListener("dblclick", deletePosterClick);
@@ -177,7 +177,7 @@ function showSavedPage() {
   formPage.classList.add("hidden");//added just now
 }
 
-function backToMain() {//rename to showMainPage
+function showMainPage() {//rename to showMainPage
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
@@ -185,7 +185,7 @@ function backToMain() {//rename to showMainPage
 
 function showPoster() {
   event.preventDefault();
-  backToMain();
+  showMainPage();
   newPoster();
   createUserPoster();
 }
