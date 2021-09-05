@@ -127,8 +127,8 @@ var currentPoster;
 // event listeners go here 👇
 randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
-makePosterBtn.addEventListener("click", posterForm);
-savedPosterBtn.addEventListener("click", goToSaved);
+makePosterBtn.addEventListener("click", showPosterForm);
+savedPosterBtn.addEventListener("click", showSavedPage);
 nevermindBtn.addEventListener("click", backToMain);
 backBtn.addEventListener("click", backToMain);
 showPosterBtn.addEventListener("click", showPoster);
@@ -146,30 +146,38 @@ function randomPoster() {
   showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
   currentPoster = new Poster(showRandomPoster.src, showRandomTitle.innerText, showRandomQuote.innerText);
 }
+//sections we have
+  //main-poster
+  //poster-form
+  //saved-posters
 
-function posterForm() {
-  hideMainPage();
-  showPosterForm();
-}
+// function posterForm() {
+//   // hideMainPage();
+//   showPosterForm();
+// }
 
-function hideMainPage() {
-  mainPage.classList.add("hidden");
-}
+// function hideMainPage() {
+//   mainPage.classList.add("hidden");
+// }
 
 function showPosterForm() {
   formPage.classList.remove("hidden");
+  mainPage.classList.add("hidden");//might remove
+  savedPage.classList.add("hidden");//added just now
 }
 
-function goToSaved() {
-  hideMainPage();
-  showSavedPage();
-}
+// function goToSaved() {//may remove, this is redundant
+//   hideMainPage();
+//   showSavedPage();
+// }
 
 function showSavedPage() {
   savedPage.classList.remove("hidden");
+  mainPage.classList.add("hidden");//might remove
+  formPage.classList.add("hidden");//added just now
 }
 
-function backToMain() {
+function backToMain() {//rename to showMainPage
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
@@ -209,7 +217,7 @@ function newPoster() {
 
 function savePoster() {
   pushToSavedPosters();
-  goToSaved();
+  showSavedPage();
   displayOnGrid();
 }
 
