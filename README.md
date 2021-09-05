@@ -8,7 +8,7 @@ Our app generates random motivation posters. You can even create your own, and s
 
 Check out a demo below, or test it out for yourself [here](https://janitastic.github.io/hang-in-there/)!
 
-![App Demo](https://github.com/janitastic/hang-in-there/blob/main/assets/hang-in-there%20(1).mp4)
+![App Demo](https://giphy.com/embed/XlW99h8GTcxrJMzHVO)
 
 ---
 
