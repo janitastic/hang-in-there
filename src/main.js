@@ -146,38 +146,20 @@ function randomPoster() {
   showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
   currentPoster = new Poster(showRandomPoster.src, showRandomTitle.innerText, showRandomQuote.innerText);
 }
-//sections we have
-  //main-poster
-  //poster-form
-  //saved-posters
-
-// function posterForm() {
-//   // hideMainPage();
-//   showPosterForm();
-// }
-
-// function hideMainPage() {
-//   mainPage.classList.add("hidden");
-// }
 
 function showPosterForm() {
   formPage.classList.remove("hidden");
-  mainPage.classList.add("hidden");//might remove
-  savedPage.classList.add("hidden");//added just now
+  mainPage.classList.add("hidden");
+  savedPage.classList.add("hidden");
 }
-
-// function goToSaved() {//may remove, this is redundant
-//   hideMainPage();
-//   showSavedPage();
-// }
 
 function showSavedPage() {
   savedPage.classList.remove("hidden");
-  mainPage.classList.add("hidden");//might remove
-  formPage.classList.add("hidden");//added just now
+  mainPage.classList.add("hidden");
+  formPage.classList.add("hidden");
 }
 
-function showMainPage() {//rename to showMainPage
+function showMainPage() {
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
