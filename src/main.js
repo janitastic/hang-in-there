@@ -124,15 +124,13 @@ var currentPoster;
   var savePosterBtn = document.querySelector(".save-poster");
   var savedGrid = document.querySelector(".saved-posters-grid");
 
-
-
 // event listeners go here 👇
 randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
-makePosterBtn.addEventListener("click", posterForm);
-savedPosterBtn.addEventListener("click", goToSaved);
-nevermindBtn.addEventListener("click", backToMain);
-backBtn.addEventListener("click", backToMain);
+makePosterBtn.addEventListener("click", showPosterForm);
+savedPosterBtn.addEventListener("click", showSavedPage);
+nevermindBtn.addEventListener("click", showMainPage);
+backBtn.addEventListener("click", showMainPage);
 showPosterBtn.addEventListener("click", showPoster);
 savePosterBtn.addEventListener("click", savePoster);
 savedGrid.addEventListener("dblclick", deletePosterClick);
@@ -142,7 +140,6 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-
 function randomPoster() {
   showRandomPoster.src = images[getRandomIndex(images)];
   showRandomTitle.innerText = titles[getRandomIndex(titles)];
@@ -150,29 +147,19 @@ function randomPoster() {
   currentPoster = new Poster(showRandomPoster.src, showRandomTitle.innerText, showRandomQuote.innerText);
 }
 
-function posterForm() {
-  hideMainPage();
-  showPosterForm();
-}
-
-function hideMainPage() {
-  mainPage.classList.add("hidden");
-}
-
 function showPosterForm() {
   formPage.classList.remove("hidden");
-}
-
-function goToSaved() {
-  hideMainPage();
-  showSavedPage();
+  mainPage.classList.add("hidden");
+  savedPage.classList.add("hidden");
 }
 
 function showSavedPage() {
   savedPage.classList.remove("hidden");
+  mainPage.classList.add("hidden");
+  formPage.classList.add("hidden");
 }
 
-function backToMain() {
+function showMainPage() {
   mainPage.classList.remove("hidden");
   savedPage.classList.add("hidden");
   formPage.classList.add("hidden");
@@ -180,7 +167,7 @@ function backToMain() {
 
 function showPoster() {
   event.preventDefault();
-  backToMain();
+  showMainPage();
   newPoster();
   createUserPoster();
 }
@@ -212,7 +199,7 @@ function newPoster() {
 
 function savePoster() {
   pushToSavedPosters();
-  goToSaved();
+  showSavedPage();
   displayOnGrid();
 }
 
