@@ -124,8 +124,6 @@ var currentPoster;
   var savePosterBtn = document.querySelector(".save-poster");
   var savedGrid = document.querySelector(".saved-posters-grid");
 
-
-
 // event listeners go here 👇
 randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
@@ -141,7 +139,6 @@ savedGrid.addEventListener("dblclick", deletePosterClick);
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
 
 function randomPoster() {
   showRandomPoster.src = images[getRandomIndex(images)];
