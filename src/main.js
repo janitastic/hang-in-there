@@ -145,7 +145,7 @@ showPosterBtn.addEventListener("click", showPoster);
 savePosterBtn.addEventListener("click", savePoster);
 savedGrid.addEventListener("dblclick", deletePosterClick);
 // console.log(savedPosterBtn);
-// functions and event handlers go here 👇
+// functions and event handlers go here 👇N
 
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -242,13 +242,13 @@ function displayOnGrid() {
   }
 }
 
-function deletePosterClick() {
-  var miniPosterID = event.target.id;
+function deletePosterClick(miniPosterID) {
+  var miniPosterID = Number(event.target.parentNode.id);
   for(var i = 0; i < savedPosters.length; i++){
-    if(savedPosters[i].id === miniPosterID) {
-      console.log(savedPosters[i].id);
-      savedPosters.splice(i)
+    if(savedPosters[i].id === miniPosterID){
+      savedPosters.splice(i, 1)
     }
+    displayOnGrid();
   }
   //delete the mini-poster.id class when we double dblclick - removes from savedPosters array
     //we will need to find the index of which one is being clicked
