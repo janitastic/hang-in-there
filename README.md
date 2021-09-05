@@ -6,13 +6,18 @@ Turn that frown upside down with a motivational poster.
 
 Our app generates random motivation posters. You can even create your own, and save them to view later.
 
-Check out a demo below, or test it out for yourself [here](https://janitastic.github.io/hang-in-there/)!
-
-![App Demo](https://giphy.com/embed/XlW99h8GTcxrJMzHVO)
+Check out the instructions below, or test it out for yourself at [https://janitastic.github.io/hang-in-there/](https://janitastic.github.io/hang-in-there/)!
 
 ---
 
-## Check out the App for yourself! [Hang in There](https://janitastic.github.io/hang-in-there/)
+  #### 1) Using the menu buttons are at the bottom of the screen you can navigate the site.
+
+![Menu Buttons](readme-imgs/Main%20Screen%20Buttons.png)
+
+    - Select the Save Poster button to save a poster you see on the screen
+    - Select the Show Saved Posters button to see all the posters you've saved
+    - Select the Show Another Random Poster button to cycle through other poster options
+    - Select the Make Your Own Poster button to get creative!
 
 ---
 
