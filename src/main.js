@@ -1,4 +1,3 @@
-// query selector variables go here 👇
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -104,7 +103,6 @@ var savedPosters = [];
 var currentPoster;
 
 // Variables targeting relevant DOM elements 👇
-  // looking at iteration 1, which elements on our HTML do we need to maninipulate?
   var showRandomPoster = document.querySelector(".poster-img");
   var showRandomTitle = document.querySelector(".poster-title");
   var showRandomQuote = document.querySelector(".poster-quote");
@@ -125,16 +123,10 @@ var currentPoster;
   var mainQuote = document.querySelector(".poster-quote");
   var savePosterBtn = document.querySelector(".save-poster");
   var savedGrid = document.querySelector(".saved-posters-grid");
-  var deletePoster = document.querySelector(".mini-poster");//may not need this
-  // var posterArticle = document.querySelector(".poster"); //do we need this?
-  // var newPoster = newPoster();//not sure if we need this
-  // var poster = new Poster();
-
 
 
 
 // event listeners go here 👇
-// window.addEventListener("load", randomPoster);
 randomPoster()
 randomPosterBtn.addEventListener("click", randomPoster);
 makePosterBtn.addEventListener("click", posterForm);
@@ -144,18 +136,14 @@ backBtn.addEventListener("click", backToMain);
 showPosterBtn.addEventListener("click", showPoster);
 savePosterBtn.addEventListener("click", savePoster);
 savedGrid.addEventListener("dblclick", deletePosterClick);
-// console.log(savedPosterBtn);
-// functions and event handlers go here 👇N
 
-// (we've provided one for you to get you started)!
+// functions go here 👇
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-//HELPER FUNCTIONS WE NEED
 
 function randomPoster() {
-  // console.log(images[getRandomIndex(images)]);
   showRandomPoster.src = images[getRandomIndex(images)];
   showRandomTitle.innerText = titles[getRandomIndex(titles)];
   showRandomQuote.innerText = quotes[getRandomIndex(quotes)];
@@ -195,7 +183,6 @@ function showPoster() {
   backToMain();
   newPoster();
   createUserPoster();
-  // pushToSavedPosters();
 }
 
 function clearInputs() {
@@ -205,7 +192,6 @@ function clearInputs() {
 }
 
 function createUserPoster() {
-  // clearInputs();
   images.push(userImage.value);
   titles.push(userTitle.value);
   quotes.push(userQuote.value);
@@ -225,15 +211,9 @@ function newPoster() {
 }
 
 function savePoster() {
-  // pushUserPoster();
-  // images.push(userImage.value);
-  // titles.push(userTitle.value);
-  // quotes.push(userQuote.value);
-  // currentPoster = new Poster(userImage.value, userTitle.value, userQuote.value);
   pushToSavedPosters();
   goToSaved();
   displayOnGrid();
-  //all posters in savedPosters array are displayed on the saved posters page grid
 }
 
 function displayOnGrid() {
@@ -258,7 +238,4 @@ function deletePosterClick(miniPosterID) {
     }
     displayOnGrid();
   }
-  //delete the mini-poster.id class when we double dblclick - removes from savedPosters array
-    //we will need to find the index of which one is being clicked
-  //using splice() remove the clicked poster from array
 }
