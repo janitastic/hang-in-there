@@ -198,7 +198,14 @@ function showPoster() {
   // pushToSavedPosters();
 }
 
+function clearInputs() {
+  userImage.value = "";
+  userTitle.value = "";
+  userQuote.value = "";
+}
+
 function createUserPoster() {
+  // clearInputs();
   images.push(userImage.value);
   titles.push(userTitle.value);
   quotes.push(userQuote.value);
@@ -230,6 +237,7 @@ function savePoster() {
 }
 
 function displayOnGrid() {
+  clearInputs();
   savedGrid.innerHTML = ``;
   for (var i = 0; i < savedPosters.length; i++) {
     savedGrid.innerHTML += `
