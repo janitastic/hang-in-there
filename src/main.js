@@ -125,6 +125,7 @@ var currentPoster;
   var mainQuote = document.querySelector(".poster-quote");
   var savePosterBtn = document.querySelector(".save-poster");
   var savedGrid = document.querySelector(".saved-posters-grid");
+  var deletePoster = document.querySelector(".mini-poster");//may not need this
   // var posterArticle = document.querySelector(".poster"); //do we need this?
   // var newPoster = newPoster();//not sure if we need this
   // var poster = new Poster();
@@ -142,6 +143,7 @@ nevermindBtn.addEventListener("click", backToMain);
 backBtn.addEventListener("click", backToMain);
 showPosterBtn.addEventListener("click", showPoster);
 savePosterBtn.addEventListener("click", savePoster);
+savedGrid.addEventListener("dblclick", deletePosterClick);
 // console.log(savedPosterBtn);
 // functions and event handlers go here 👇
 
@@ -231,11 +233,24 @@ function displayOnGrid() {
   savedGrid.innerHTML = ``;
   for (var i = 0; i < savedPosters.length; i++) {
     savedGrid.innerHTML += `
-    <div class = "mini-poster" id = ${savedPosters[i].id}>
-      <img src = ${savedPosters[i].imageURL}>
+    <div class="mini-poster" id=${savedPosters[i].id}>
+      <img src=${savedPosters[i].imageURL}>
       <h2>${savedPosters[i].title}</h2>
       <h4>${savedPosters[i].quote}</h4>
     </div>
     `;
   }
+}
+
+function deletePosterClick() {
+  var miniPosterID = event.target.id;
+  for(var i = 0; i < savedPosters.length; i++){
+    if(savedPosters[i].id === miniPosterID) {
+      console.log(savedPosters[i].id);
+      savedPosters.splice(i)
+    }
+  }
+  //delete the mini-poster.id class when we double dblclick - removes from savedPosters array
+    //we will need to find the index of which one is being clicked
+  //using splice() remove the clicked poster from array
 }
