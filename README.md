@@ -47,7 +47,6 @@ Check out the instructions below, or test it out for yourself at [https://janita
 
 ## Future Feature Addtions
 
-- Delete posters you want to remove
 - Error handling
 - Drag and drop image feature
 - Larger view modal
